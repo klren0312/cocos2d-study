@@ -37,7 +37,7 @@ export class GameManager extends Component {
     // 游戏开始，设置状态为初始化
     start() {
         this.setCurState(GameState.GS_INIT);
-        // this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);
+        this.playerCtrl.node.on('JumpEnd', this.onPlayerJumpEnd, this);
     }
 
     // 初始化
@@ -127,6 +127,25 @@ export class GameManager extends Component {
     // Play按钮点击
     onStartBtnClick() {
         this.setCurState(GameState.GS_PLAYING);
+    }
+
+    // 跳跃结束，修改计步器和判断结果
+    onPlayerJumpEnd(moveIndex: number) {
+        if (this.stepsLabel) {
+            this.stepsLabel.string = '' + (moveIndex >= this.roadLength ? this.roadLength : moveIndex);
+        }
+        this.checkResult(moveIndex);
+    }
+
+    // 判断跳跃到地面还是坑
+    checkResult(moveIndex: number) {
+        if (moveIndex < this.roadLength) {
+            if (this._road[moveIndex] === BlockType.BT_NONE) {
+                this.setCurState(GameState.GS_INIT);
+            }
+        } else {
+            this.setCurState(GameState.GS_INIT)
+        }
     }
 }
 

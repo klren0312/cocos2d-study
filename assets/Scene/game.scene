@@ -349,7 +349,7 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 33554432,
+    "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -396,7 +396,7 @@
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
-    "_visibility": 1108344832,
+    "_visibility": 1074790400,
     "_targetTexture": null,
     "_postProcess": null,
     "_usePostProcess": false,
@@ -717,7 +717,7 @@
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
-    "_visibility": 1108344832,
+    "_visibility": 34603008,
     "_targetTexture": null,
     "_postProcess": null,
     "_usePostProcess": false,
